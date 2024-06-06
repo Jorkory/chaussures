@@ -68,12 +68,12 @@ class Shoe
         return $this;
     }
 
-    public function getCategory(): ?string
+    public function getCategory(): ?ShoeCategory
     {
         return $this->category;
     }
 
-    public function setCategory(string $category): static
+    public function setCategory(ShoeCategory $category): static
     {
         $this->category = $category;
 
