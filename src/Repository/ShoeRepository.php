@@ -3,6 +3,7 @@
 namespace App\Repository;
 
 use App\Entity\Shoe;
+use App\Enum\ShoeCategory;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
@@ -40,4 +41,13 @@ class ShoeRepository extends ServiceEntityRepository
     //            ->getOneOrNullResult()
     //        ;
     //    }
+
+    public function findAllByCategory(ShoeCategory $category): array
+    {
+        return $this->createQueryBuilder('s')
+            ->andWhere('s.category = :category')
+            ->setParameter('category', $category)
+            ->getQuery()
+            ->getResult();
+    }
 }

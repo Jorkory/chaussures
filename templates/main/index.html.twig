@@ -4,23 +4,25 @@
 
 {% block body %}
     <main>
-        <section class="xl:w-[1280px] mx-auto my-7 flex flex-wrap justify-between">
-        {% for shoe in shoes %}
-            <article class="rounded-xl overflow-hidden bg-white mb-5 shadow-md">
-                <a>
-                    <figure class="w-[300px]">
-                        <img class="h-[250px] w-full object-cover" src="{{ asset(shoe.imageUrl) }}" alt="{{ shoe.title }}">
-                        <figcaption class="p-4">
-                            <div>
-                                <p>{{ shoe.title }}</p>
-                                <p class="text-right font-bold text-lg mt-2">{{ shoe.price }} €</p>
-                            </div>
-                        </figcaption>
-                    </figure>
-                </a>
-            </article>
-            <p></p>
-        {% endfor %}
-        </section>
+        <div class="xl:w-[1264px] mx-auto my-7">
+            <section class="flex flex-wrap">
+            {% for shoe in shoes %}
+                <article class="rounded-xl overflow-hidden bg-white shadow-md m-2">
+                    <a>
+                        <figure class="w-[300px]">
+                            <img class="h-[250px] w-full object-cover" src="{{ asset(shoe.imageUrl) }}" alt="{{ shoe.title }}">
+                            <figcaption class="p-4">
+                                <div>
+                                    <p class="text-center">{{ shoe.title }}</p>
+                                    <p class="text-right font-bold text-lg mt-2">{{ shoe.price }} €</p>
+                                </div>
+                            </figcaption>
+                        </figure>
+                    </a>
+                </article>
+                <p></p>
+            {% endfor %}
+            </section>
+        </div>
     </main>
 {% endblock %}

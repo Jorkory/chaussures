@@ -1,10 +1,10 @@
 <header class="flex justify-between items-center bg-black text-white p-4">
-    <p class="text-4xl">Chaussures</p>
+    <a href="{{ path('app_main') }}" class="text-4xl">Chaussures</a>
     <nav>
         <ul class="flex gap-4 text-xl">
-            <li><a href="#">Femme</a></li>
-            <li><a href="#">Homme</a></li>
-            <li><a href="#">Enfants</a></li>
+            <li><a href="{{ path('app_main', {category : 'woman'}) }}">Femme</a></li>
+            <li><a href="{{ path('app_main', {category: 'men'}) }}">Homme</a></li>
+            <li><a href="{{ path('app_main', {category: 'children'}) }}">Enfants</a></li>
         </ul>
     </nav>
 </header>
