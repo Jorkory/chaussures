@@ -5,6 +5,9 @@
 {% block body %}
     <main>
         <div class="xl:w-[1264px] mx-auto my-7">
+            {% if category %}
+                <h1 class="text-3xl font-bold text-center mb-4">Chaussures pour {{ category.getLabel() }}</h1>
+            {% endif %}
             <section class="flex flex-wrap">
             {% for shoe in shoes %}
                 <article class="rounded-xl overflow-hidden bg-white shadow-md m-2">
