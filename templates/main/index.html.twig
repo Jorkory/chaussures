@@ -10,7 +10,12 @@
                 <a>
                     <figure class="w-[300px]">
                         <img class="h-[250px] w-full object-cover" src="{{ asset(shoe.imageUrl) }}" alt="{{ shoe.title }}">
-                        <figcaption class="p-4">{{ shoe.title }}</figcaption>
+                        <figcaption class="p-4">
+                            <div>
+                                <p>{{ shoe.title }}</p>
+                                <p class="text-right font-bold text-lg mt-2">{{ shoe.price }} €</p>
+                            </div>
+                        </figcaption>
                     </figure>
                 </a>
             </article>

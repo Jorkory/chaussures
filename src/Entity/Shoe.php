@@ -27,6 +27,9 @@ class Shoe
     #[ORM\Column(length: 255)]
     private ?ShoeCategory $category = null;
 
+    #[ORM\Column]
+    private ?float $price = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -76,6 +79,18 @@ class Shoe
     public function setCategory(ShoeCategory $category): static
     {
         $this->category = $category;
+
+        return $this;
+    }
+
+    public function getPrice(): ?float
+    {
+        return $this->price;
+    }
+
+    public function setPrice(float $price): static
+    {
+        $this->price = $price;
 
         return $this;
     }

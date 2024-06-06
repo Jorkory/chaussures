@@ -52,6 +52,7 @@ final class ShoeFactory extends ModelFactory
             'description' => self::faker()->text(),
             'imageUrl' => $this->getRandomShoeImageUrl(),
             'title' => self::faker()->words(3, true),
+            'price' => self::faker()->randomFloat(2, 15, 90),
         ];
     }
 
