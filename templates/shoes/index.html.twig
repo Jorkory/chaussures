@@ -3,8 +3,8 @@
 {% block title %}{{ shoe.title }}{% endblock %}
 
 {% block body %}
-<main>
-    <section class="w-[1280px] bg-white m-auto rounded-xl overflow-hidden my-7">
+<main class="p-7">
+    <section class="max-w-[1280px] bg-white m-auto rounded-xl overflow-hidden">
         <div class="flex">
         <img class="w-[500px] h-[600px] object-cover" src="{{ asset(shoe.imageUrl) }}" alt="{{ shoe.title }}">
             <div class="flex flex-col p-5">
