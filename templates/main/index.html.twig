@@ -8,7 +8,7 @@
             <section class="flex flex-wrap">
             {% for shoe in shoes %}
                 <article class="rounded-xl overflow-hidden bg-white shadow-md m-2">
-                    <a>
+                    <a href="{{ path('app_shoes', {id: shoe.id}) }}">
                         <figure class="w-[300px]">
                             <img class="h-[250px] w-full object-cover" src="{{ asset(shoe.imageUrl) }}" alt="{{ shoe.title }}">
                             <figcaption class="p-4">

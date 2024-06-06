@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ shoe.title }}{% endblock %}
+
+{% block body %}
+<main>
+    <section class="w-[1280px] bg-white m-auto rounded-xl overflow-hidden my-7">
+        <div class="flex">
+        <img class="w-[500px] h-[600px] object-cover" src="{{ asset(shoe.imageUrl) }}" alt="{{ shoe.title }}">
+            <div class="flex flex-col p-5">
+                <h1 class="text-center font-bold m-10 text-4xl">{{ shoe.title }}</h1>
+                <p class="m-10 flex-1">{{ shoe.description }}</p>
+                <ul class="flex gap-3 m-auto">
+                    <li class="waist">38</li>
+                    <li class="waist">39</li>
+                    <li class="waist">40</li>
+                    <li class="waist">41</li>
+                    <li class="waist">42</li>
+                    <li class="waist">43</li>
+                </ul>
+                <p class="m-7 text-right text-4xl font-bold">{{ shoe.price }} €</p>
+                <div class="flex flex-col items-end">
+                    <button class="btn">Ajouter au panier</button>
+                    <button class="btn">Réserver en magasin</button>
+                </div>
+            </div>
+        </div>
+
+    </section>
+</main>
+{% endblock %}

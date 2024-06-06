@@ -5,3 +5,25 @@
 body {
     background-color: ghostwhite;
 }
+
+.waist {
+    border : 1px solid rgb(113 113 122);
+    padding: 8px 24px;
+    color: rgb(113 113 122);
+    border-radius: 10px;
+}
+
+.waist:hover {
+    color: #07ADBB;
+    border-color: #07ADBB;
+    cursor: pointer;
+}
+
+.btn {
+    background-color: #07ADBB;
+    padding: 8px 24px;
+    color: white;
+    width: 250px;
+    border-radius: 10px;
+    margin: 5px;
+}
