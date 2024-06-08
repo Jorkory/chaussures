@@ -18,7 +18,7 @@
                                 <figcaption class="p-4">
                                     <div>
                                         <p class="text-center">{{ shoe.title }}</p>
-                                        <p class="text-right font-bold text-lg mt-2">{{ shoe.price }} €</p>
+                                        <p class="text-right font-bold text-lg mt-2">{{ shoe.price|number_format(2, ',', ' ') }} €</p>
                                     </div>
                                 </figcaption>
                             </figure>

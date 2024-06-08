@@ -23,7 +23,7 @@
                                     {{ quantity.quantity }}
                                 </div>
                                 <div class="flex-1">
-                                    {{ shoes[key].price * quantity.quantity}} €
+                                    {{ (shoes[key].price * quantity.quantity)|number_format(2, ',', ' ')}} €
                                 </div>
                                 <form action="{{ path('app_cart_remove', {'shoeId': key, 'waist': waist}) }}" method="POST">
                                     <input type="hidden" name="_token" value="{{ csrf_token('remove_item') }}" />
@@ -40,7 +40,7 @@
                 <article class="p-4 bg-white rounded-xl">
                     <h2 class="mb-4 font-bold text-lg">Mon panier</h2>
                     <p class="text-end text-green-500 font-bold">Livraison offerte !</p>
-                    <p class="text-end"><span class="font-bold">Total (TVA incluse) :</span> {{ total }} €</p>
+                    <p class="text-end"><span class="font-bold">Total (TVA incluse) :</span> {{ total|number_format(2, ',', ' ') }} €</p>
                     <div class="flex justify-center mt-4">
                         <button class="btn">Commander</button>
                     </div>

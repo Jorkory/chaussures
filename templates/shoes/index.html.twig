@@ -10,7 +10,7 @@
             <div class="flex-1 flex flex-col p-5">
                 <h1 class="text-center font-bold m-10 text-4xl">{{ shoe.title }}</h1>
                 <p class="m-10 flex-1">{{ shoe.description }}</p>
-                <p class="m-7 text-right text-4xl font-bold">{{ shoe.price }} €</p>
+                <p class="m-7 text-right text-4xl font-bold">{{ shoe.price|number_format(2, ',', ' ') }} €</p>
                 <div class="flex flex-col items-end">
                 {{ form_start(form) }}
                     {{ form_widget(form._token) }}
