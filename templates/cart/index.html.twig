@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello CartController!{% endblock %}
+
+{% block body %}
+    <main class="p-7">
+        <section class="flex gap-4 max-w-[1280px] m-auto">
+            <article class="flex-3 w-[60%] bg-white rounded-xl">
+                <ul>
+                {% for key, item in cart %}
+                    <li class="flex items-center border-b-[1px] border-zinc-200 last:border-b-[0] p-4">
+                        <div>
+                            <img class="w-[160px] h-[120px] object-cover rounded" src="{{ asset(shoes[key].imageUrl) }}" alt="{{ shoes[key].title }}"/>
+                        </div>
+                        <ul class="w-full p-4">
+                            <h2 class="mb-4 font-bold text-lg">{{ shoes[key].title }}</h2>
+                            {% for waist, quantity in item %}
+                            <li class="flex justify-between my-2">
+                                <div class="flex-1">
+                                    Taille : {{ waist }}
+                                </div>
+                                <div class="flex-1">
+                                    {{ quantity.quantity }}
+                                </div>
+                                <div class="flex-1">
+                                    {{ shoes[key].price * quantity.quantity}} €
+                                </div>
+                                <button class="text-sm">Supprimer</button>
+                            </li>
+                        {% endfor %}
+                        </ul>
+                    </li>
+                {% endfor %}
+                </ul>
+            </article>
+            <div class="flex-1 flex flex-col gap-4">
+                <article class="p-4 bg-white rounded-xl">
+                    <h2 class="mb-4 font-bold text-lg">Total</h2>
+                    <button class="btn">Commander</button>
+                </article>
+                <article class="flex flex-col items-center p-4 bg-white rounded-xl">
+                    <label for="promo" class="text-center font-bold text-lg">Code promo ?</label>
+                    <input id="promo" name="promo" type="text" class="w-full m-1 p-1 border-[2px] border-cyan-500 rounded" />
+                    <button class="btn">Valider</button>
+                </article>
+            </div>
+        </section>
+    </main>
+{% endblock %}
