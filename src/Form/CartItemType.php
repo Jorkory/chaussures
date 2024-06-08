@@ -36,9 +36,6 @@ class CartItemType extends AbstractType
             ->add('add_to_cart', SubmitType::class, [
                 'label' => 'Ajouter au panier',
             ])
-            ->add('reserve_in_store', SubmitType::class, [
-                'label' => 'Réserve en magasin',
-            ])
         ;
     }
 

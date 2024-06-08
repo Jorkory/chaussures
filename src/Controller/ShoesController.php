@@ -29,7 +29,6 @@ class ShoesController extends AbstractController
 
             $cartService->addCart($form->getData());
 
-            dd($session->get('cart'));
             return $this->redirectToRoute('app_shoes', ['id' => $shoe->getId()]);
         }
 
