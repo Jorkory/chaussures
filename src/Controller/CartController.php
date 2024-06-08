@@ -3,17 +3,17 @@
 namespace App\Controller;
 
 use App\Repository\ShoeRepository;
+use App\Service\CartService;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Component\Routing\Attribute\Route;
 
 class CartController extends AbstractController
 {
     #[Route('/cart', name: 'app_cart')]
-    public function index(SessionInterface $session, ShoeRepository $repository): Response
+    public function index(ShoeRepository $repository, CartService $cartService): Response
     {
-        $cart = $session->get('cart', []);
+        $cart = $cartService->getCart();
         $shoes = [];
         foreach ($cart as $key => &$item) {
             $shoes[$key] = $repository->find($key);
@@ -23,6 +23,16 @@ class CartController extends AbstractController
             'controller_name' => 'CartController',
             'cart' => $cart,
             'shoes' => $shoes,
+            'total' => $cartService->getTotal($repository),
         ]);
     }
+
+    #[Route('/cart/{shoeId}/{waist}', name: 'app_cart_remove', methods: ['POST'])]
+    public function removeFormCart(int $shoeId, int $waist, CartService $cartService): Response
+    {
+        $cartService->removeCart($shoeId, $waist);
+
+        return $this->redirectToRoute('app_cart');
+    }
+
 }
