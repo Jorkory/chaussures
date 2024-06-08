@@ -26,6 +26,7 @@
                                     {{ shoes[key].price * quantity.quantity}} €
                                 </div>
                                 <form action="{{ path('app_cart_remove', {'shoeId': key, 'waist': waist}) }}" method="POST">
+                                    <input type="hidden" name="_token" value="{{ csrf_token('remove_item') }}" />
                                     <button type="submit" class="text-sm">Supprimer</button>
                                 </form>
                             </li>
