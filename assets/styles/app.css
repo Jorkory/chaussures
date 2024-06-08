@@ -14,13 +14,13 @@ body {
 }
 
 .waist:hover {
-    color: #07ADBB;
-    border-color: #07ADBB;
+    color: #22c55e;
+    border-color: #22c55e;
     cursor: pointer;
 }
 
 .btn {
-    background-color: #07ADBB;
+    background-color: #22c55e;
     padding: 8px 24px;
     color: white;
     width: 250px;
