@@ -5,14 +5,14 @@
 {% block body %}
     <main class="p-7">
         <section class="flex gap-4 max-w-[1280px] m-auto">
-            <article class="flex-3 w-[60%] bg-white rounded-xl">
+            <article class="flex-1 w-[60%] bg-white rounded-xl">
                 <ul>
                 {% for key, item in cart %}
                     <li class="flex items-center border-b-[1px] border-zinc-200 last:border-b-[0] p-4">
                         <div>
                             <img class="w-[160px] h-[120px] object-cover rounded" src="{{ asset(shoes[key].imageUrl) }}" alt="{{ shoes[key].title }}"/>
                         </div>
-                        <ul class="w-full p-4">
+                        <ul class="w-full flex-1 p-4">
                             <h2 class="mb-4 font-bold text-lg">{{ shoes[key].title }}</h2>
                             {% for waist, quantity in item %}
                             <li class="flex justify-between my-2">
@@ -27,7 +27,7 @@
                                 </div>
                                 <form action="{{ path('app_cart_remove', {'shoeId': key, 'waist': waist}) }}" method="POST">
                                     <input type="hidden" name="_token" value="{{ csrf_token('remove_item') }}" />
-                                    <button type="submit" class="text-sm">Supprimer</button>
+                                    <button type="submit" class="text-sm bg-red-100 py-[1px] px-[4px] rounded">Supprimer</button>
                                 </form>
                             </li>
                         {% endfor %}
@@ -36,7 +36,7 @@
                 {% endfor %}
                 </ul>
             </article>
-            <div class="flex-1 flex flex-col gap-4">
+            <div class="w-[350px] flex flex-col gap-4">
                 <article class="p-4 bg-white rounded-xl">
                     <h2 class="mb-4 font-bold text-lg">Mon panier</h2>
                     <p class="text-end text-green-500 font-bold">Livraison offerte !</p>

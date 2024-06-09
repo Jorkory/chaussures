@@ -28,6 +28,7 @@ class ShoesController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
 
             $cartService->addCart($form->getData());
+            flash()->addSuccess('Ajouté au panier', [], 'Succès !');
 
             return $this->redirectToRoute('app_shoes', ['id' => $shoe->getId()]);
         }

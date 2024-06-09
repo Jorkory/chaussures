@@ -25,6 +25,17 @@ class CartService
         return $this->cart;
     }
 
+    public function getCartItemsCount(): int
+    {
+        $count = 0;
+        foreach ($this->cart as $item) {
+            foreach ($item as $waist) {
+                $count += $waist['quantity'];
+            }
+        }
+        return $count;
+    }
+
     public function getTotal(ShoeRepository $repository): float
     {
         $total = 0;

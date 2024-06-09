@@ -6,6 +6,26 @@ body {
     background-color: ghostwhite;
 }
 
+#cart {
+    position: relative;
+}
+
+#cart-count {
+    position: absolute;
+    bottom: -3px;  /* Ajustez cette valeur selon vos besoins */
+    right: -3px;  /* Ajustez cette valeur selon vos besoins */
+    font-size: 1rem;  /* Ajustez cette valeur selon vos besoins */
+    color: white;
+    background-color: #22c55e;
+    border-radius: 50%;
+    width: 22px;  /* Assurez-vous que la hauteur et la largeur sont égales pour un cercle parfait */
+    height: 22px;  /* Assurez-vous que la hauteur et la largeur sont égales pour un cercle parfait */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 22px;  /* Centrer verticalement le texte */
+}
+
 .waist {
     border : 1px solid rgb(113 113 122);
     padding: 8px 24px;
